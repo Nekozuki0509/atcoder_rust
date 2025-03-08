@@ -1,0 +1,12 @@
+{
+    "terminal.integrated.defaultProfile.linux": "Bash for AtCoder",
+    "terminal.integrated.profiles.linux": {
+        "Bash for AtCoder": {
+            "path": "bash",
+            "args": [
+                "--init-file",
+                "/workspaces/rust/atcoder_profile.sh"
+            ]
+        }
+    }
+}

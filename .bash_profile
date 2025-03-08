@@ -1,0 +1,1 @@
+export PATH=/workspaces/rust/commands:$PATH

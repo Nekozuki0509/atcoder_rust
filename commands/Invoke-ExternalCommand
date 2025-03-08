@@ -1,0 +1,16 @@
+#!/bin/sh
+
+commandPath=$1
+arguments=$2
+
+{
+    $commandPath $arguments
+} > >(tee -a stdout.log) 2> >(tee -a stderr.log >&2)
+
+ExitCode=$?
+stdout=$(cat stdout.log)
+stderr=$(cat stderr.log)
+
+rm -f stdout.log stderr.log
+
+echo "{\"ExitCode\": $ExitCode, \"stdout\": \"$stdout\", \"stderr\": \"$stderr\"}"

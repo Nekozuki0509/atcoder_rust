@@ -1,0 +1,4 @@
+#!/bin/sh
+
+Problem=$1
+cargo compete test "$Problem"
