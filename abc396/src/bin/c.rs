@@ -2,10 +2,10 @@ use proconio::input;
 
 fn main() {
     input! {
-        n: u32,
-        m: u32,
-        mut b:[i32; n],
-        mut w:[i32; m],
+        n: u64,
+        m: u64,
+        mut b:[i64; n],
+        mut w:[i64; m],
     }
 
     w = w.iter().filter(|&x| x > &0).cloned().collect();
@@ -33,7 +33,7 @@ fn main() {
         }
     }
 
-    for i in (w.len())..(b.len() - 1) {
+    for i in (w.len())..(b.len()) {
         //println!("i={}", i);
         if b[i] > 0 {
             temp += b[i];
