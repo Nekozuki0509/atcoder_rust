@@ -18,7 +18,7 @@ fn main() {
             continue;
         } else if i == temp2 && temp2 == temp1 {
             println!("Yes");
-            std::process::exit(0)
+            std::process::exit(0);
         } else {
             temp1 = temp2;
             temp2 = i;
