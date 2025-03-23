@@ -1,9 +1,11 @@
-use proconio::input;
+#[allow(unused_imports)]
+use proconio::{input, marker::{Bytes, Chars, Usize1}};
 
+#[proconio::fastout]
 fn main() {
     input! {
-        s: String,
+        n: usize,
     }
     
-    println!("{}", s);
+    println!("{}", (2..=n).product::<usize>());
 }

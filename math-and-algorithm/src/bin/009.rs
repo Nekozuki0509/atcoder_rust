@@ -1,11 +1,12 @@
-use proconio::input;
+#[allow(unused_imports)]
+use proconio::{input, marker::{Bytes, Chars, Usize1}};
 
+#[proconio::fastout]
 fn main() {
     input! {
         n: usize,
         s: usize,
         a: [usize;n]
-
     }
 
     for i in 0..2u32.pow(n as u32) {
