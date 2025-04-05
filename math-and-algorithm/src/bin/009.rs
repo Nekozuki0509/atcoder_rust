@@ -1,3 +1,4 @@
+use nalgebra::coordinates::X;
 #[allow(unused_imports)]
 use proconio::{input, marker::{Bytes, Chars, Usize1}};
 
@@ -9,19 +10,20 @@ fn main() {
         a: [usize;n]
     }
 
-    for i in 0..2u32.pow(n as u32) {
-        let mut sum = 0;
-        for j in 0..n {
-            if i & 2u32.pow((j) as u32) != 0 {
-                sum += a[j];
+    let mut v = vec![false; s+1];
+    v[0] = true;
+
+    for x in a {
+        for i in (0..=s).rev() {
+            if v[i] && x + i <= s {
+                v[x+i] = true;
             }
         }
-
-        if sum == s {
-            println!("Yes");
-            return;
-        }
     }
-    
-    println!("No");
+
+    if v[s] {
+        println!("Yes");
+    } else {
+        println!("No");
+    }
 }

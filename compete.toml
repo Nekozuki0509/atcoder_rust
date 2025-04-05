@@ -28,10 +28,10 @@ use proconio::{input, marker::{Bytes, Chars, Usize1}};
 #[proconio::fastout]
 fn main() {
     input! {
-        s: String,
+        n: usize,
     }
     
-    println!("{}", s);
+    println!("{}", an);
 }
 '''
 
@@ -134,7 +134,7 @@ path = "./{{ contest }}"
 
 [test]
 # Toolchain for the test. (optional)
-toolchain = "1.42.0"
+toolchain = "1.70.0"
 # Profile for `cargo build`. ("dev" | "release")
 #
 # Defaults to `"dev"`.

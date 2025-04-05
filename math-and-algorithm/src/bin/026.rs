@@ -2,8 +2,8 @@ use proconio::input;
 
 fn main() {
     input! {
-        s: String,
+        n: usize,
     }
     
-    println!("{}", s);
+    println!("{}", (1..=n).into_iter().fold(0.0, |acc, x| acc + n as f64 / x as f64));
 }

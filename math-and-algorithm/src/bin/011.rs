@@ -1,3 +1,5 @@
+use itertools::Itertools;
+use num_integer::Roots;
 use proconio::input;
 
 fn main() {
@@ -5,22 +7,15 @@ fn main() {
         n: usize,
     }
 
-    let mut set = vec![];
+    let mut prime = vec![true;n+1];
 
-    for i in 2..=n {
-        if is_prime(&set, i) {
-            set.push(i);
+    for i in 2..=n.sqrt() {
+        if prime[i] {
+            for j in (2*i..=n).filter(|x| x % i == 0).into_iter() {
+                prime[j] = false;
+            }
         }
     }
 
-    println!("{}", set.iter().fold(String::new(), |acc, &x| format!("{}{} ", acc, x)).trim_end());
-}
-
-fn is_prime(set:&Vec<usize>, n: usize) -> bool {
-    for num in set {
-        if n % num == 0 {
-            return false;
-        }
-    }
-    true
+    println!("{}", prime[2..].iter().enumerate().filter(|x| *x.1).map(|x| x.0 + 2).join(" "));
 }
