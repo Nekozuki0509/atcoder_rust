@@ -22,14 +22,16 @@ test-suite = "{{ manifest_dir }}/testcases/{{ bin_alias }}.yml"
 
 [template]
 src = '''
-#[allow(unused_imports)]
-use proconio::{input, marker::{Bytes, Chars, Usize1}};
+#[allow(unused_imports, non_snake_case)]
+use proconio::{fastout, input, marker::{Bytes, Chars, Usize1}};
 
-#[proconio::fastout]
+//#[fastout]
 fn main() {
     input! {
         n: usize,
     }
+
+    
     
     println!("{}", an);
 }
