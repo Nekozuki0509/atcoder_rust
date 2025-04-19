@@ -39,5 +39,5 @@ fn modpow(mut a: usize, b: usize, m: usize) -> usize {
 }
 
 fn division(a: usize, b: usize, m: usize) -> usize {
-    (a * modpow(a, m - 2, m)) % m
+    (a * modpow(b, m - 2, m)) % m
 }

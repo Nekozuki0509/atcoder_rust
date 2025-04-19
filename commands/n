@@ -4,7 +4,7 @@ ContestNumber=$1
 ContestName="abc$ContestNumber"
 
 strCmd="cargo"
-arguments="compete new $ContestName"
+arguments="compete new $ContestName --open"
 Result=$(Invoke-ExternalCommand "$strCmd" "$arguments")
 
 while [[ ! "$Result" =~ "Created" ]]; do
@@ -22,12 +22,6 @@ xdotool key Shift+Ctrl+p
 xdotool key Ctrl+v
 xdotool key Return
 
-echo "$ContestName/src/bin/a.rs" | xclip -selection clipboard
-xdotool key Ctrl+p
-xdotool key Ctrl+v
-sleep 0.5
-xdotool key Return
-
 sleep 0.5
 
 # with Vim extension
@@ -40,9 +34,6 @@ xdotool key 7
 xdotool key Return
 xdotool key End
 
-echo "cargo s a" | xclip -selection clipboard
+echo "s a" | xclip -selection clipboard
 
-#clear
-
-link="https://atcoder.jp/contests/$ContestName/tasks/${ContestName}_a"
-xdg-open "$link"
+exec bash
