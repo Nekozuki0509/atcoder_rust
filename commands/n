@@ -4,7 +4,7 @@ ContestNumber=$1
 ContestName="abc$ContestNumber"
 
 strCmd="cargo"
-arguments="compete new $ContestName --open"
+arguments="compete new $ContestName"
 Result=$(Invoke-ExternalCommand "$strCmd" "$arguments")
 
 while [[ ! "$Result" =~ "Created" ]]; do
@@ -22,18 +22,18 @@ xdotool key Shift+Ctrl+p
 xdotool key Ctrl+v
 xdotool key Return
 
-sleep 0.5
+# sleep 0.5
 
-# with Vim extension
-xdotool key Escape
-xdotool key 7 G A
+# # with Vim extension
+# xdotool key Escape
+# xdotool key 7 G A
 
-# without Vim extension
-xdotool key Ctrl+g
-xdotool key 7
-xdotool key Return
-xdotool key End
+# # without Vim extension
+# xdotool key Ctrl+g
+# xdotool key 7
+# xdotool key Return
+# xdotool key End
 
-echo "s a" | xclip -selection clipboard
+# echo "s a" | xclip -selection clipboard
 
 exec bash
