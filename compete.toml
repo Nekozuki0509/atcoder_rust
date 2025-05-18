@@ -32,8 +32,6 @@ fn main() {
     }
 
     
-    
-    println!("{}", an);
 }
 '''
 
