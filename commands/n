@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ContestNumber=$1
 ContestName="abc$ContestNumber"
