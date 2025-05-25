@@ -17,23 +17,23 @@ echo "$Result" >&2
 
 cd "$ContestName" || exit
 
+xdg-open "https://atcoder.jp/contests/$ContestName/tasks/${ContestName}_c"
+xdg-open "https://atcoder.jp/contests/$ContestName/tasks/${ContestName}_b"
+xdg-open "https://atcoder.jp/contests/$ContestName/tasks/${ContestName}_a"
+
+sleep 0.5
+
+code --goto "src/bin/c.rs:7:10"
+code --goto "src/bin/b.rs:7:10"
+code --goto "src/bin/a.rs:7:10"
+
+sleep 0.5
+
 echo "rust-analyzer: restart server" | xclip -selection clipboard
 xdotool key Shift+Ctrl+p
 xdotool key Ctrl+v
 xdotool key Return
 
-# sleep 0.5
-
-# # with Vim extension
-# xdotool key Escape
-# xdotool key 7 G A
-
-# # without Vim extension
-# xdotool key Ctrl+g
-# xdotool key 7
-# xdotool key Return
-# xdotool key End
-
-# echo "s a" | xclip -selection clipboard
+echo "s a" | xclip -selection clipboard
 
 exec bash
