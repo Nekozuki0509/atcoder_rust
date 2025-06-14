@@ -1,3 +1,5 @@
+use std::collections::BTreeMap;
+
 #[allow(unused_imports, non_snake_case)]
 use proconio::{fastout, input, marker::{Bytes, Chars, Usize1}};
 
@@ -7,29 +9,40 @@ fn main() {
         n: usize,
         a: [usize;n]
     }
+    let min = *a.iter().min().unwrap();
 
-    let mut vec = vec![0isize;*a.iter().max().unwrap()+2];
-    for i in a {
-        vec[0] += 1;
-        vec[i+1] -= 1;
+    let mut map = BTreeMap::new();
+    for i in &a {
+        *map.entry(min).or_insert(0) += 1isize;
+        *map.entry(i+1).or_insert(0) -= 1;
     }
 
-    //dbg!(&vec);
+    //dbg!(&map);
 
-    let mut nvec = vec![];
-    for (i, &v) in vec.iter().enumerate() {
-        if i == 0 {
-            nvec.push(v);
+    let mut nmap = BTreeMap::new();
+    let mut last = 0;
+    for (i, &v) in map.iter() {
+        if *i == min {
+            last = v;
+            nmap.insert(min, last);
             continue;
         }
 
-        nvec.push(nvec[i-1] + v);
+        nmap.insert(*i-1, last);
+        last += v;
     }
 
-    for (i, &v) in nvec.iter().enumerate().rev() {
+    //dbg!(&nmap);
+
+    let mut last = *a.iter().max().unwrap() as isize;
+    for (&i, &v) in nmap.iter().rev() {
         if v >= i as isize {
-            println!("{}", i);
+            println!("{}", (i as isize).max(last));
             return;
         }
+
+        last = v as isize;
     }
+
+    println!("{}", nmap[&min]);
 }
