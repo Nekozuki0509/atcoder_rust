@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ContestNumber=$1
-ContestName="abc$ContestNumber"
+ContestName="$ContestNumber"
 
 strCmd="cargo"
 arguments="compete new $ContestName"
