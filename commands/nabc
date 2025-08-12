@@ -1,0 +1,39 @@
+#!/bin/bash
+
+ContestNumber=$1
+ContestName="abc$ContestNumber"
+
+strCmd="cargo"
+arguments="compete new $ContestName"
+Result=$(Invoke-ExternalCommand "$strCmd" "$arguments")
+
+while [[ ! "$Result" =~ "Created" ]]; do
+    echo "$Result" >&2
+    sleep 0.5
+    Result=$(Invoke-ExternalCommand "$strCmd" "$arguments")
+done
+
+echo "$Result" >&2
+
+cd "$ContestName" || exit
+
+xdg-open "https://atcoder.jp/contests/$ContestName/tasks/${ContestName}_c"
+xdg-open "https://atcoder.jp/contests/$ContestName/tasks/${ContestName}_b"
+xdg-open "https://atcoder.jp/contests/$ContestName/tasks/${ContestName}_a"
+
+sleep 0.5
+
+code --goto "src/bin/c.rs:7:10"
+code --goto "src/bin/b.rs:7:10"
+code --goto "src/bin/a.rs:7:10"
+
+sleep 1
+
+echo "rust-analyzer: restart server" | xclip -selection clipboard
+xdotool key Shift+Ctrl+p
+xdotool key Ctrl+v
+xdotool key Return
+
+echo "s a" | xclip -selection clipboard
+
+exec bash
