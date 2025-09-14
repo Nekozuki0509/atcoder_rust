@@ -1,25 +1,30 @@
 #!/bin/bash
 
-mkdir -p ./tools/out
+#mkdir -p ./tools/out
 
 sum_score=0
 cases=0
-for infile in ./tools/in/*.txt; do
+#for infile in ./tools/in/*.txt; do
+cargo build -r
+cd tools/
+for infile in ./in/*.txt; do
     filename=$(basename "$infile")
-    outfile="./tools/out/$filename"
+    #outfile="./tools/out/$filename"
+    outfile="./out/$filename"
 
     echo "start $filename..."
-    cargo run --bin $(basename "$PWD")-a <$infile >$outfile
+    #cargo run --bin $(basename "$PWD")-a <$infile >$outfile
+    cargo run -r --bin tester /workspaces/rust/target/release/ahc053-a <in/$filename >out/$filename
 
-    cd tools/
-    score=$(cargo run -r --bin vis in/$filename out/$filename | grep -o '[0-9]*' | tail -1)
-    echo "Score = $score"
-    if [ $score -ne 0 ]; then
-        sum_score=$((sum_score + score))
-        cases=$((cases + 1))
-    else break
-    fi
-    cd ../
+    #cd tools/
+    #score=$(cargo run -r --bin vis in/$filename out/$filename | grep -o '[0-9]*' | tail -1)
+    # echo "Score = $score"
+    # if [ $score -ne 0 ]; then
+    #     sum_score=$((sum_score + score))
+    #     cases=$((cases + 1))
+    # else break
+    # fi
+    #cd ../
 done
 
 echo "Sum Score = $sum_score"

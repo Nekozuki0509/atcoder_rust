@@ -2,8 +2,8 @@ use proconio::input;
 
 fn main() {
     input! {
-        s: String,
+        n: usize,
     }
     
-    println!("{}", s);
+    println!("{}", if n + 1 == 2usize.pow(format!("{:b}", n).len() as u32) {"Second"} else {"First"});
 }

@@ -2,8 +2,14 @@ use proconio::input;
 
 fn main() {
     input! {
-        s: String,
+        n: isize,
+        a: [isize;n]
     }
     
-    println!("{}", s);
+    let mut an = 0;
+    for (i, &v) in a.iter().enumerate() {
+        an += v * (2*(i as isize)+1-n);
+    }
+
+    println!("{}", an);
 }

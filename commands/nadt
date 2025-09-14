@@ -17,6 +17,11 @@ echo "$Result" >&2
 
 cd "$ContestName" || exit
 
+echo "rust-analyzer: restart server" | xclip -selection clipboard
+xdotool key Shift+Ctrl+p
+xdotool key Ctrl+v
+xdotool key Return
+
 sleep 0.5
 
 code --goto "src/bin/c.rs:7:10"
@@ -25,11 +30,6 @@ code --goto "src/bin/e.rs:7:10"
 code --goto "src/bin/f.rs:7:10"
 
 sleep 0.5
-
-echo "rust-analyzer: restart server" | xclip -selection clipboard
-xdotool key Shift+Ctrl+p
-xdotool key Ctrl+v
-xdotool key Return
 
 echo "s a" | xclip -selection clipboard
 

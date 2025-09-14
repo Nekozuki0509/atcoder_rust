@@ -116,7 +116,7 @@ fn get_new_position(from: (usize, usize), action: Action) -> (i32, i32) {
     (row as i32 + dr, col as i32 + dc)
 }
 
-fn is_waxed(from: (usize, usize), action: Action, waxed: &FxHashSet<(usize, usize)>) -> bool {
+fn is_waxed(from: (usize, usize), action: Action, waxed: &HashSet<(usize, usize)>) -> bool {
     if action != Action::Right && action != Action::Left {
         return true;
     }
@@ -138,7 +138,7 @@ fn is_waxed(from: (usize, usize), action: Action, waxed: &FxHashSet<(usize, usiz
 #[derive(Debug, Clone)]
 struct State {
     robots: Vec<Robot>,
-    waxed: FxHashSet<(usize, usize)>,
+    waxed: HashSet<(usize, usize)>,
     operations: Vec<usize>,
 }
 
@@ -154,7 +154,7 @@ impl State {
             })
             .collect();
 
-        let mut waxed: FxHashSet<(usize, usize)> = FxHashSet::default();
+        let mut waxed = FxHashSet::default();
         for robot in &robots {
             waxed.insert((robot as &Robot).current_pos);
         }

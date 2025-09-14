@@ -2,8 +2,8 @@ use proconio::input;
 
 fn main() {
     input! {
-        s: String,
+        (a, b, c, d): (isize, isize, isize, isize)
     }
     
-    println!("{}", s);
+    println!("{}", ((a * c).max(a * d)).max((b * c).max(b * d)));
 }
