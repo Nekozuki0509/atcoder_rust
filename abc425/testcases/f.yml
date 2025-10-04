@@ -1,0 +1,30 @@
+---
+type: Batch
+timelimit: ~
+match: Lines
+
+cases:
+  - name: sample1
+    in: |
+      3
+      aab
+    out: |
+      3
+  - name: sample2
+    in: |
+      7
+      atcoder
+    out: |
+      5040
+  - name: sample3
+    in: |
+      22
+      atcoderbeginnercontest
+    out: |
+      115732070
+
+extend:
+  - type: Text
+    path: "./f"
+    in: /in/*.txt
+    out: /out/*.txt
