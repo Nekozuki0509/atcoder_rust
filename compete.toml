@@ -108,6 +108,7 @@ superslice = "=1.0.0"
 tap = "=1.0.1"
 text_io = "=0.1.12"
 varisat = "=0.2.2"
+libs ={ path = "../libs" }
 '''
 dev-dependencies = '''
 #atcoder-202004-lock = { git = "https://github.com/qryxip/atcoder-202004-lock" }
@@ -170,4 +171,4 @@ language_id = "5054"
 #[submit]
 #kind = "command"
 #args = ["cargo", "equip", "--exclude-atcoder-crates", "--resolve-cfgs", "--remove", "docs", "--minify", "libs", "--rustfmt", "--check", "--bin", "{{ bin_name }}"]
-#language_id = "4050"
+#language_id = "5054"

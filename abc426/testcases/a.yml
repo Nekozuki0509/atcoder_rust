@@ -1,0 +1,27 @@
+---
+type: Batch
+timelimit: ~
+match: Lines
+
+cases:
+  - name: sample1
+    in: |
+      Serval Ocelot
+    out: |
+      Yes
+  - name: sample2
+    in: |
+      Serval Lynx
+    out: |
+      No
+  - name: sample3
+    in: |
+      Ocelot Ocelot
+    out: |
+      Yes
+
+extend:
+  - type: Text
+    path: "./a"
+    in: /in/*.txt
+    out: /out/*.txt

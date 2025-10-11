@@ -4,13 +4,10 @@ use rustc_hash::FxHasher;
 
 type FxIndexMap<K, V> = IndexMap<K, V, BuildHasherDefault<FxHasher>>;
 
+#[macro_export]
 macro_rules! map {
     () => { FxIndexMap::default() };
 }
-
-// impl FxIndexMap<K, V> {
-//     fn from_vec
-// }
 
 #[test]
 fn test_map() {
