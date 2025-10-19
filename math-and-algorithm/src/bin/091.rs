@@ -2,8 +2,17 @@ use proconio::input;
 
 fn main() {
     input! {
-        s: String,
+        (n, x): (usize, usize)
     }
-    
-    println!("{}", s);
+
+    let mut an = 0;
+    for a in 1..=n {
+        for b in a + 1..=n {
+            if x > a + 2 * b && x - a - b <= n {
+                an += 1;
+            }
+        }
+    }
+
+    println!("{}", an);
 }
