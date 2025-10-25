@@ -47,7 +47,8 @@ for batch in batch_*; do
 
         echo "start $filename..."
         #cargo run --bin $(basename "$PWD")-a <$infile >$outfile
-        /workspaces/rust/target/release/tester /workspaces/rust/target/release/ahc054-a <in/$filename >out/$filename
+        /workspaces/atcoder/target/release/ahc055-a <$infile >$outfile
+        #/workspaces/rust/target/release/tester /workspaces/rust/target/release/ahc055-a <in/$filename >out/$filename
 
         lines=$(wc -l < out/$filename)
 
@@ -104,7 +105,7 @@ while read sc c maxsc maxc minsc minc; do
     fi
 done < all_results.txt
 
-sort -n cases.result | head -100
+#sort -n cases.result | head -100
 
 echo "Sum Score = $sum_score"
 echo "Case = $cases"

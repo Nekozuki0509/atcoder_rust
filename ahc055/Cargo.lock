@@ -3,7 +3,13 @@
 version = 3
 
 [[package]]
-name = "abc428"
+name = "ac-library-rs"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "09e1ead7b72f44698f97266946c0576d00c9e2010858f5aba47aa4660177ef73"
+
+[[package]]
+name = "ahc055"
 version = "0.1.0"
 dependencies = [
  "ac-library-rs",
@@ -32,7 +38,6 @@ dependencies = [
  "itertools-num",
  "lazy_static",
  "libm",
- "libs",
  "maplit",
  "memoise",
  "multimap",
@@ -70,12 +75,6 @@ dependencies = [
  "text_io",
  "varisat",
 ]
-
-[[package]]
-name = "ac-library-rs"
-version = "0.1.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "09e1ead7b72f44698f97266946c0576d00c9e2010858f5aba47aa4660177ef73"
 
 [[package]]
 name = "aho-corasick"
@@ -445,10 +444,6 @@ name = "libm"
 version = "0.2.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f7012b1bbb0719e1097c47611d3898568c546d597c2e74d66f6087edd5233ff4"
-
-[[package]]
-name = "libs"
-version = "0.1.0"
 
 [[package]]
 name = "log"

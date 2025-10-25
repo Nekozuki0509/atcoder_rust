@@ -3,75 +3,6 @@
 version = 3
 
 [[package]]
-name = "abc428"
-version = "0.1.0"
-dependencies = [
- "ac-library-rs",
- "alga",
- "amplify",
- "amplify_derive",
- "amplify_num",
- "argio",
- "ascii",
- "az",
- "bitset-fixed",
- "bitvec",
- "bstr",
- "btreemultimap",
- "counter",
- "easy-ext",
- "either",
- "fixedbitset",
- "getrandom",
- "glidesort",
- "hashbag",
- "im-rc",
- "indexing",
- "indexmap 2.0.0",
- "itertools",
- "itertools-num",
- "lazy_static",
- "libm",
- "libs",
- "maplit",
- "memoise",
- "multimap",
- "multiversion",
- "nalgebra",
- "ndarray",
- "num",
- "num-bigint",
- "num-complex 0.4.3",
- "num-derive",
- "num-integer",
- "num-iter",
- "num-rational",
- "num-traits",
- "omniswap",
- "once_cell",
- "ordered-float 3.7.0",
- "pathfinding",
- "permutohedron",
- "petgraph",
- "proconio",
- "rand",
- "rand_chacha",
- "rand_core",
- "rand_distr",
- "rand_hc",
- "rand_pcg",
- "recur-fn",
- "regex",
- "rustc-hash",
- "smallvec",
- "static_assertions",
- "superslice",
- "tap",
- "text_io",
- "varisat",
-]
-
-[[package]]
 name = "ac-library-rs"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -445,10 +376,6 @@ name = "libm"
 version = "0.2.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f7012b1bbb0719e1097c47611d3898568c546d597c2e74d66f6087edd5233ff4"
-
-[[package]]
-name = "libs"
-version = "0.1.0"
 
 [[package]]
 name = "log"
@@ -1087,6 +1014,74 @@ name = "typenum"
 version = "1.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "562d481066bde0658276a35467c4af00bdc6ee726305698a55b86e61d7ad82bb"
+
+[[package]]
+name = "typical90"
+version = "0.1.0"
+dependencies = [
+ "ac-library-rs",
+ "alga",
+ "amplify",
+ "amplify_derive",
+ "amplify_num",
+ "argio",
+ "ascii",
+ "az",
+ "bitset-fixed",
+ "bitvec",
+ "bstr",
+ "btreemultimap",
+ "counter",
+ "easy-ext",
+ "either",
+ "fixedbitset",
+ "getrandom",
+ "glidesort",
+ "hashbag",
+ "im-rc",
+ "indexing",
+ "indexmap 2.0.0",
+ "itertools",
+ "itertools-num",
+ "lazy_static",
+ "libm",
+ "maplit",
+ "memoise",
+ "multimap",
+ "multiversion",
+ "nalgebra",
+ "ndarray",
+ "num",
+ "num-bigint",
+ "num-complex 0.4.3",
+ "num-derive",
+ "num-integer",
+ "num-iter",
+ "num-rational",
+ "num-traits",
+ "omniswap",
+ "once_cell",
+ "ordered-float 3.7.0",
+ "pathfinding",
+ "permutohedron",
+ "petgraph",
+ "proconio",
+ "rand",
+ "rand_chacha",
+ "rand_core",
+ "rand_distr",
+ "rand_hc",
+ "rand_pcg",
+ "recur-fn",
+ "regex",
+ "rustc-hash",
+ "smallvec",
+ "static_assertions",
+ "superslice",
+ "tap",
+ "text_io",
+ "varisat",
+]
 
 [[package]]
 name = "unicode-ident"
