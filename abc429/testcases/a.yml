@@ -1,0 +1,28 @@
+---
+type: Batch
+timelimit: ~
+match: Lines
+
+cases:
+  - name: sample1
+    in: |
+      5 3
+    out: |
+      OK
+      OK
+      OK
+      Too Many Requests
+      Too Many Requests
+  - name: sample2
+    in: |
+      3 5
+    out: |
+      OK
+      OK
+      OK
+
+extend:
+  - type: Text
+    path: "./a"
+    in: /in/*.txt
+    out: /out/*.txt
