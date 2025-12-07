@@ -23,6 +23,12 @@ xdg-open "https://atcoder.jp/contests/$ContestName/tasks/${ContestName}_a"
 
 sleep 0.5
 
+echo "{
+  \"rust-analyzer.linkedProjects\": [
+    \"./$ContestName/Cargo.toml\"
+  ],
+}" > ../.vscode/settings.json
+
 echo "rust-analyzer: restart server" 
 
 echo "rust-analyzer: restart server" | xclip -selection clipboard
@@ -37,6 +43,8 @@ code --goto "src/bin/b.rs:7:10"
 code --goto "src/bin/a.rs:7:10"
 
 sleep 0.5
+
+t a
 
 echo "s a" | xclip -selection clipboard
 

@@ -26,6 +26,8 @@ xdotool key Shift+Ctrl+p
 xdotool key Ctrl+v
 xdotool key Return
 
+t a
+
 echo "s a" | xclip -selection clipboard
 
 exec bash

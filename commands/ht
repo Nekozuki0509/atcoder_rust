@@ -47,13 +47,15 @@ for batch in batch_*; do
 
         echo "start $filename..."
         #cargo run --bin $(basename "$PWD")-a <$infile >$outfile
-        /workspaces/atcoder/target/release/ahc055-a <$infile >$outfile
+        #/workspaces/atcoder/target/release/ahc056-a <$infile >$outfile
+        /home/nekozuki/vscode/atcoder/atcoder/target/release/ahc056-a <$infile >$outfile
         #/workspaces/rust/target/release/tester /workspaces/rust/target/release/ahc055-a <in/$filename >out/$filename
 
-        lines=$(wc -l < out/$filename)
+        #lines=$(wc -l < out/$filename)
 
         #cd tools/
-        #score=$(cargo run -r --bin vis in/$filename out/$filename | grep -o '[0-9]*' | tail -1)
+        #lines=$(/workspaces/atcoder/target/release/vis in/$filename out/$filename | grep -o '[0-9]*' | tail -1)
+        lines=$(/home/nekozuki/vscode/atcoder/atcoder/target/release/vis in/$filename out/$filename | grep -o '[0-9]*' | tail -1)
         # echo "Score = $score"
         if [ $lines -ne 0 ]; then
             batch_score=$((batch_score + lines))
@@ -70,6 +72,7 @@ for batch in batch_*; do
             fi
 
             echo "$lines $filename" >> cases.result
+        else break
         fi
     done < "$batch"
 

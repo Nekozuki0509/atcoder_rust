@@ -1,0 +1,5 @@
+{
+  "rust-analyzer.linkedProjects": [
+    "./joi2026-yo2/Cargo.toml"
+  ],
+}

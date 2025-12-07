@@ -189,7 +189,7 @@ toolchain = "1.89.0"
 kind = "file"
 path = "{{ src_path }}"
 language_id = "6088"
-#[submit]
-#kind = "command"
-#args = ["cargo", "equip", "--exclude-atcoder-crates", "--resolve-cfgs", "--remove", "docs", "--minify", "libs", "--rustfmt", "--check", "--bin", "{{ bin_name }}"]
-#language_id = "5054"
+# [submit]
+# kind = "command"
+# args = ["rustup", "run", "nightly", "cargo", "-Z", "next-lockfile-bump", "equip", "--exclude-atcoder-crates", "--remove", "docs", "--minify", "libs", "--no-rustfmt", "--no-check", "--bin", "{{ bin_name }}", "--toolchain-for-proc-macro-srv", "nightly-2023-07-28"]
+# language_id = "6088"
